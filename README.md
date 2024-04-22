@@ -1,0 +1,1 @@
+This is a Pharmacy management system which have an admin side and staff side where it will help to manage the sales of the medicine , it can show daily, weekly and monthly sales report. Admin can add,delete and edit medicine and admin can see the profit of the sales made , while staff can only make sales
