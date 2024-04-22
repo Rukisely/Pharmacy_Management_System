@@ -1,0 +1,15 @@
+
+
+
+
+Login credentials
+admin
+username: admin
+password: admin
+
+cashier
+username: ligemaanny
+password: ligemaanny
+
+username: mahesabu
+password: mahesabu12345

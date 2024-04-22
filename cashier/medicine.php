@@ -1,0 +1,80 @@
+
+<?php
+error_reporting(0);
+  $page_title = 'TRIPLE G-DLDM | All Medicine';
+  require_once('includes/load.php');
+  // Checkin What level user has permission to view this page
+   //page_require_level(2);
+  $products = join_product_table();
+?>
+  <?php include 'include/header.php';?>
+        <style type="text/css">
+          .btn{
+            cursor: pointer;
+          }
+        </style>
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="col-sm-12">
+                <?php echo display_msg($msg); ?>
+            </div>
+              <div class="title_left">
+                <h3><i class="fa fa-medkit"></i> Medicine</h3>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12  ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>List of Medicines</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                  <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+                      <thead>
+                        <tr>
+                          <th class="text-center" style="width: 2%;">#</th>
+                <th style="width: 15%;"> Product Title </th>
+                <th class="text-center" style="width: 10%;"> Categories </th>
+                <th class="text-center" style="width: 6%;"> In-Stock </th>
+                <th class="text-center" style="width: 10%;"> Buying Price </th>
+                <th class="text-center" style="width: 10%;"> Selling Price </th>
+                <th class="text-center" style="width: 10%;"> Product Added </th>
+                        </tr>
+                      </thead>
+
+
+                      <tbody>
+                        <?php foreach ($products as $product):?>
+              <tr>
+                <td class="text-center"><?php echo count_id();?></td>
+                <td> <?php echo remove_junk($product['name']); ?></td>
+                <td class="text-center"> <?php echo remove_junk($product['categorie']); ?></td>
+                <td class="text-center"> <?php echo remove_junk($product['quantity']); ?></td>
+                <td class="text-center"> <?php echo remove_junk($product['buy_price']); ?></td>
+                <td class="text-center"> <?php echo remove_junk($product['sale_price']); ?></td>
+                <td class="text-center"> <?php echo read_date($product['date']); ?></td>
+                
+              </tr>
+             <?php endforeach; ?>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <?php include 'include/footer.php';?>
+  </body>
+</html>
